@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="mt-2">
+    <table class="max-w-5xl mx-auto table-auto">
+      <thead class="justify-between">
+        <tr class="bg-green-600">
+          <th class="px-16 py-2">
+            <span class="text-gray-100 font-semibold">ID</span>
+          </th>
+          <th class="px-16 py-2">
+            <span class="text-gray-100 font-semibold">Name</span>
+          </th>
+        
+          <th class="px-16 py-2">
+            <span class="text-gray-100 font-semibold">Email</span>
+          </th>
+
+          <th class="px-16 py-2">
+            <span class="text-gray-100 font-semibold">Password</span>
+          </th>
+
+          <th class="px-16 py-2">
+            <span class="text-gray-100 font-semibold">Setting</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-gray-200">
+<form method="post" action="update">{% csrf_token %}
+        <tr class="bg-white border-b-2 border-gray-200">
+          <td class="px-16 py-2 flex flex-row items-center">
+            <span><input type="text" name="id" value={{data.id}} readonly></span>
+          </td>
+          <td>
+            <span class="text-center ml-2 font-semibold"><input type="text" name="name" value={{data.NameF}}></span>
+          </td>
+         
+          <td class="px-16 py-2">
+            <span><input type="text" name='email'  value={{data.EmailF}}></span>
+          </td>
+          <td class="px-16 py-2">
+            <span><input type="text" name='password' value={{data.PasswordF}}></span>
+          </td>
+          <td class="px-16 py-2">
+            <span><button type="submit" style="border: 1px solid; border-color: red" value="Update">Update</button></span>
+          </td>
+          
+                                     
+            </span>
+          </td>
+        </tr>
+    </form>
+{% endblock %}
